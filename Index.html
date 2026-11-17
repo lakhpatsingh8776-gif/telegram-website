@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Get 1000 Followers</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #080b16;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 25px 15px;
+}
+
+.container {
+  max-width: 650px;
+  margin: 15px auto;
+  padding: 55px 30px;
+  background: #101321;
+  border: 1px solid #153e78;
+  border-radius: 28px;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(30px, 7vw, 44px);
+  font-weight: 900;
+  background: linear-gradient(90deg,#00e5ff,#278cff);
+  color: transparent;
+  background-clip: text;
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #b5c3df;
+  font-size: 19px;
+  margin-bottom: 85px;
+}
+
+label {
+  display: block;
+  color: #c5d4f5;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 35px 0 18px;
+}
+
+select, input {
+  width: 100%;
+  padding: 25px;
+  border: 1px solid #515775;
+  border-radius: 24px;
+  background: #1b2032;
+  color: white;
+  font-size: 18px;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #00e5ff;
+}
+
+option {
+  background: #1b2032;
+  color: white;
+}
+
+button {
+  width: 100%;
+  padding: 27px;
+  margin-top: 60px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg,#00e5ed,#278cff);
+  color: #001018;
+  font-size: 21px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.result {
+  display: none;
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #00dff5;
+  border-radius: 15px;
+  background: #1b2032;
+  color: #d7faff;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.notice {
+  text-align: center;
+  color: #aab5c6;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>GET 1000 FOLLOWERS</h1>
+
+<p class="subtitle">
+Premium Instagram Growth Tool
+</p>
+
+<label>SELECT FOLLOWERS</label>
+
+<select id="followers">
+<option value="100">100 Follower</option>
+<option value="200">200 Follower</option>
+<option value="500">500 Follower</option>
+<option value="1000">1000 Follower</option>
+<option value="Premium">Premium</option>
+</select>
+
+<label>INSTAGRAM ID</label>
+
+<input
+type="text"
+id="username"
+placeholder="@username"
+autocomplete="off"
+>
+
+<label>ENTER DEMO CODE</label>
+
+<input
+type="text"
+id="demoCode"
+placeholder="Enter demo code"
+autocomplete="off"
+>
+
+<button onclick="getFollower()">
+GET FOLLOWER
+</button>
+
+<div class="result" id="result"></div>
+
+<p class="notice">
+Demo interface only. No Instagram account
+credentials are collected. No real followers
+are provided or guaranteed.
+</p>
+
+</div>
+
+<script>
+function getFollower() {
+
+  const username =
+    document.getElementById("username").value.trim();
+
+  const followers =
+    document.getElementById("followers").value;
+
+  const demoCode =
+    document.getElementById("demoCode").value.trim();
+
+  const result =
+    document.getElementById("result");
+
+  if (!username.startsWith("@") || username.length < 2) {
+    alert("Please enter a valid demo username starting with @");
+    return;
+  }
+
+  if (!demoCode) {
+    alert("Please enter a demo code");
+    return;
+  }
+
+  result.style.display = "block";
+
+  result.innerHTML =
+    "<b>DEMO REQUEST CREATED</b><br>" +
+    "Instagram ID: " + escapeHTML(username) + "<br>" +
+    "Selected: " + escapeHTML(followers) +
+    (followers === "Premium" ? "" : " Followers") +
+    "<br><br>Demo only. No followers have been sent.";
+}
+
+function escapeHTML(value) {
+  return value.replace(/[&<>"']/g, function(char) {
+    return {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[char];
+  });
+}
+</script>
+
+</body>
+</html>
